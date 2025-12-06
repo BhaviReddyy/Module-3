@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="nav"></div>
+
+    <main class="container">
+        <h2>Your Todos</h2>
+        <div id="status" class="muted">Loading</div>
+        <div id="todoContainer" class="todo-grid"></div>
+    </main>
+
+    <div id="footer"></div>
+</body>
+<script type="module">
+    import navbar from './components/navbar.js'; import footer from './components/footer.js'; import todos from './pages/todos.js'; document.getElementById('nav').appendChild(navbar()); document.getElementById('footer').appendChild(footer()); todos();
+</script>
+
+</html>

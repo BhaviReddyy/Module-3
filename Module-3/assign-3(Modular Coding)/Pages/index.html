@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Modular App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="nav"></div>
+
+    <main class="container">
+        <h1>welcome</h1>
+        <div class="links">
+            <a href="signup.html" class="btn">Signup</a>
+            <a href="login.html" class="btn">Login</a>
+            <a href="todos.html" class="btn">Todos</a>
+        </div>
+    </main>
+    <div id="footer"></div>
+</body>
+<script type="module">
+    import navbar from './components/navbar.js'; import footer from './components/footer.js'; document.getElementById('nav').appendChild(navbar()); document.getElementById('footer').appendChild(footer());
+
+</script>
+
+</html>
