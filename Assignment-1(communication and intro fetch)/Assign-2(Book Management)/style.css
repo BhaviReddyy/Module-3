@@ -1,0 +1,266 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+    background: #f4f5fb;
+    color: #222;
+    min-height: 100vh;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* Sidebar */
+
+.sidebar {
+    width: 280px;
+    background: #111827;
+    color: #f9fafb;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sidebar h1 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.sidebar h2 {
+    font-size: 1.1rem;
+    margin-top: 12px;
+    margin-bottom: 8px;
+}
+
+#addBookForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#addBookForm label {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.85rem;
+    gap: 4px;
+}
+
+#addBookForm input {
+    border-radius: 6px;
+    border: 1px solid #4b5563;
+    background: #111827;
+    color: #f9fafb;
+    padding: 8px 10px;
+    font-size: 0.9rem;
+}
+
+#addBookForm input:focus {
+    outline: 1px solid #3b82f6;
+}
+
+
+/* Buttons */
+
+.btn {
+    padding: 7px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.2s;
+}
+
+.btn.primary {
+    background: #3b82f6;
+    color: white;
+    margin-top: 6px;
+}
+
+.btn.primary:hover {
+    background: #2563eb;
+}
+
+.btn.secondary {
+    background: #10b981;
+    color: white;
+}
+
+.btn.secondary:hover {
+    background: #059669;
+}
+
+.btn.danger {
+    background: #ef4444;
+    color: white;
+}
+
+.btn.danger:hover {
+    background: #dc2626;
+}
+
+.btn.outline {
+    background: transparent;
+    border: 1px solid #6b7280;
+    color: #374151;
+}
+
+.btn.outline:hover {
+    background: #e5e7eb;
+}
+
+
+/* Main content */
+
+.main-content {
+    flex: 1;
+    padding: 24px;
+}
+
+.main-header {
+    margin-bottom: 16px;
+}
+
+.main-header h2 {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+}
+
+.main-header p {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+
+/* Books grid */
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+
+/* Responsive: 1 column on small, 2 on medium, 3 on large */
+
+@media (max-width: 900px) {
+    .app-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    .books-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .books-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Book card */
+
+.book-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-cover {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.book-body {
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.book-title {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.book-author {
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+
+.book-price {
+    font-size: 0.9rem;
+    margin-top: 4px;
+    font-weight: 500;
+    color: #16a34a;
+}
+
+.book-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 4px;
+    padding: 10px 12px 12px 12px;
+}
+
+
+/* Modal */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.hidden {
+    display: none;
+}
+
+.modal {
+    background: white;
+    border-radius: 12px;
+    padding: 16px 18px;
+    width: 90%;
+    max-width: 420px;
+    position: relative;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.2);
+}
+
+.modal-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.modal h3 {
+    margin-bottom: 8px;
+}
+
+.modal p {
+    margin: 4px 0;
+}
